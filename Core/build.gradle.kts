@@ -62,8 +62,10 @@ tasks.register<Copy>("copyToMainOut") {
 
 tasks.register<Copy>("prepareTestServer") {
     dependsOn(tasks.named("copyToMainOut"))
-    delete(file("../testServer/plugins/JakesRTP.jar"))
+    doFirst {
+        delete(file("../testServer/plugins/JakesRTP.jar"))
+    }
     from(file("../build-output-final/JakesRTP-v${project.version}.jar"))
     into(file("../testServer/plugins/"))
-    rename("-.*\\.", ".")
+    rename("""-.*\.""", ".")
 }
