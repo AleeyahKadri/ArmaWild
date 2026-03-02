@@ -65,5 +65,5 @@ tasks.register<Copy>("prepareTestServer") {
     delete(file("../testServer/plugins/JakesRTP.jar"))
     from(file("../build-output-final/JakesRTP-v${project.version}.jar"))
     into(file("../testServer/plugins/"))
-    rename("-.*\\\\.", ".")
+    rename("-.*\\.", ".")
 }
