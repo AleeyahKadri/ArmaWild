@@ -1,7 +1,4 @@
-import org.gradle.api.JavaVersion
-import org.gradle.api.file.DuplicatesStrategy
-import org.gradle.api.tasks.Copy
-import org.gradle.api.tasks.compile.JavaCompile
+import org.gradle.api.plugins.JavaPluginExtension
 
 defaultTasks("build")
 
@@ -11,7 +8,7 @@ subprojects {
     group = "biz.donvi"
     version = "0.14.9"
 
-    extensions.configure<org.gradle.api.plugins.JavaPluginExtension> {
+    extensions.configure<JavaPluginExtension> {
         sourceCompatibility = JavaVersion.VERSION_16
         targetCompatibility = JavaVersion.VERSION_16
     }

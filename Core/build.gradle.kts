@@ -1,5 +1,4 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import org.gradle.api.tasks.Copy
 
 plugins {
     java
@@ -58,5 +57,5 @@ tasks.register<Copy>("prepareTestServer") {
     delete(file("../testServer/plugins/JakesRTP.jar"))
     from(file("../build-output-final/JakesRTP-v${project.version}.jar"))
     into(file("../testServer/plugins/"))
-    rename("-.*\\.", "\\.")
+    rename("-.*\\.", ".")
 }
